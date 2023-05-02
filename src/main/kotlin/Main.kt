@@ -8,6 +8,8 @@ fun main(args: Array<String>) {
         .map { inventoryString -> inventoryString.split("\n") }
         .map { inventory -> inventory.map { item -> item.toInt() } }
         .map { inventory -> inventory.sum() }
-        .max()
+        .sortedDescending()
+        .take(3)
+        .sum()
     println(maxInventory)
 }
